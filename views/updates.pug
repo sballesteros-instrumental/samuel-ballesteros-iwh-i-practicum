@@ -16,3 +16,17 @@ html
   body
     h1= title
     a(href="/") Return to the homepage
+
+    h2 Create New Bachelor Record
+    form(action="/update-cobj" method="POST")
+      div
+        label(for="name") Name:
+        input(type="text" name="name" required)
+      div
+        label(for="description") Description:
+        input(type="text" name="description" required)
+      div
+        label(for="university") University:
+        input(type="text" name="university" required)
+      div
+        button(type="submit") Submit

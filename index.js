@@ -24,17 +24,21 @@ app.get('/', async (req, res) => {
     } catch (error) { res.status(500).send('Error loading data') }
 });
 
-// TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
-
 app.get('/update-cobj', async (req, res) => {
     res.render('updates', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum' });
 });
 
-// * Code for Route 2 goes here
-
-// TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
-
-// * Code for Route 3 goes here
+app.post('/update-cobj', async (req, res) => {
+    
+    const createBachelorEndpoint = 'https://api.hubapi.com/crm/v3/objects/2-43174658';
+    const headers = { Authorization: `Bearer ${PRIVATE_APP_ACCESS}`, 'Content-Type': 'application/json' };
+    const { name, description, university } = req.body;
+    const newBachelor = { properties: { name, description, university } };
+    try {
+        await axios.post(createBachelorEndpoint, newBachelor, { headers });
+        res.redirect('/');
+    } catch (error) { res.status(500).send('Failed to create Bachelor'); }
+});
 
 // * Localhost
 app.listen(3000, () => console.log('Listening on http://localhost:3000'));
