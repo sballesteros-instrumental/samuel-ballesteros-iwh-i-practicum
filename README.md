@@ -4,7 +4,9 @@ This repository is for the Integrating With HubSpot I: Foundations course. This 
 
 To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+**Developer Test Account** https://app.hubspot.com/dashboard/49656424
+
+**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/49656424/objects/2-43174658/views/all/list
 
 ___
 ## Tips:
