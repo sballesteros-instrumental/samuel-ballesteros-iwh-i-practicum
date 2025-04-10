@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= title
+    style.
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+  body
+    h1= title
+
+    a(href="/update-cobj") Add/Update Custom Object
+
+    if bachelors.length
+      table
+        thead
+          tr
+            th Name
+            th Description
+            th University
+        tbody
+          each bachelor in bachelors
+            tr
+              td= bachelor.properties.name
+              td= bachelor.properties.description
+              td= bachelor.properties.university
+    else
+      p No bachelor records found.
